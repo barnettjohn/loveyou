@@ -1,18 +1,43 @@
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
 <head>
-	<title>Our Love Story</title>
+	<title>我们的爱情故事 💑</title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<style type="text/css">
 		@font-face {
 			font-family: digit;
 			src: url('digital-7_mono.ttf') format("truetype");
 		}
+
+		/* 添加新的动画样式 */
+		@keyframes heartbeat {
+			0% {
+				transform: scale(1);
+			}
+
+			50% {
+				transform: scale(1.1);
+			}
+
+			100% {
+				transform: scale(1);
+			}
+		}
+
+		.heart-beat {
+			animation: heartbeat 1s infinite;
+		}
+
+		.romantic-text {
+			color: #ff69b4;
+			text-shadow: 0 0 5px #fff, 0 0 10px #ff69b4;
+		}
 	</style>
 	<link href="css/default.css" type="text/css" rel="stylesheet">
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/garden.js"></script>
-    <script type="text/javascript" src="js/functions.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
 </head>
 
 <body>
@@ -20,42 +45,43 @@
 		<div id="content">
 			<div id="code">
 				<span class="comments">/**</span><br />
-				<span class="space"/>*<span class="comments"></span><br />
-				<span class="space"/>*<span class="comments"></span><br />
-				<span class="space"/>*/<span class="comments"></span><br />
-				Boy i = <span class="keyword">new</span> Boy(<span class="string">"张庆伟"</span>);<br />
-				Girl u = <span class="keyword">new</span> Girl(<span class="string">"张婷"</span>);<br />
-				<span class="comments">// Jul 27, 2014, I told you I love you. </span><br />
+				<span class="space" />*<span class="comments">亲爱的兰溪：</span><br />
+				<span class="space" />*<span class="comments">时光飞逝，但我对你的心意始终如一</span><br />
+				<span class="space" />*/<span class="comments"></span><br />
+				Boy i = <span class="keyword">new</span> Boy(<span class="string">"庆伟"</span>);<br />
+				Girl u = <span class="keyword">new</span> Girl(<span class="string">"兰溪"</span>);<br />
+				<span class="comments">// 2024年4月1日，命运让我们相遇 </span><br />
 				i.love(u);<br />
-				<span class="comments">// Luckily, you accepted and became my girlfriend eversince.</span><br />
+				<span class="comments">// 你的笑容照亮了我的世界</span><br />
 				u.accepted();<br />
-				<span class="comments">// Since then, I miss u every day.</span><br />
+				<span class="comments">// 每一个想你的日日夜夜</span><br />
 				i.miss(u);<br />
-				<span class="comments">// And take care of u and our love.</span><br />
+				<span class="comments">// 都让我更加确定，你就是我要携手一生的人</span><br />
 				i.takeCareOf(u);<br />
-				<span class="comments">// You say that you won't be so easy to marry me.</span><br />
-				<span class="comments">// So I keep waiting and I have confidence that you will.</span><br />
-				<span class="keyword">boolean</span> isHesitate = <span class="keyword">true</span>;<br />
-				<span class="keyword">while</span> (isHesitate) {<br />
-				<span class="placeholder"/>i.waitFor(u);<br />
-				<span class="placeholder"/><span class="comments">// I think it is an important decision</span><br />
-				<span class="placeholder"/><span class="comments">// and you should think it over.</span><br />
-				<span class="placeholder"/>isHesitate = u.thinkOver();<br />
+				<span class="comments">// 此时此刻，我要向你许下最真挚的承诺</span><br />
+				<span class="comments">// 亲爱的，你愿意成为我一生的挚爱吗？</span><br />
+				<span class="keyword">boolean</span> answer = u.willYouMarryMe();<br />
+				<span class="keyword">if</span> (answer) {<br />
+				<span class="placeholder" />i.propose(u);<br />
+				<span class="placeholder" /><span class="comments">// 我承诺会用一生去爱你、疼你、保护你</span><br />
+				<span class="placeholder" /><span class="comments">// 给你最浪漫的生活，最温暖的家</span><br />
+				<span class="placeholder" />i.loveForever(u);<br />
 				}<br />
-				<span class="comments">// After a romantic wedding, we will live happily ever after.</span><br />
+				<span class="comments">// 让我们一起书写属于我们的浪漫故事</span><br />
 				i.marry(u);<br />
 				i.liveHappilyWith(u);<br />
 			</div>
 			<div id="loveHeart">
 				<canvas id="garden"></canvas>
 				<div id="words">
-					<div id="messages">
-						Ting, I have fallen in love with you for
-						<div id="elapseClock"></div>
+					<div id="messages" class="romantic-text">
+						亲爱的兰溪，我们相爱已经
+						<div id="elapseClock" class="heart-beat"></div>
 					</div>
 					<div id="loveu">
-						Love u forever and ever.<br/>
-						<div class="signature">- BarnettJohn</div>
+						愿你成为我的唯一 ❤️<br />
+						让我们携手走过人生每一个春夏秋冬<br />
+						<div class="signature">—— 庆伟 用心爱你</div>
 					</div>
 				</div>
 			</div>
@@ -69,21 +95,21 @@
 		var offsetX = $("#loveHeart").width() / 2;
 		var offsetY = $("#loveHeart").height() / 2 - 55;
 		var together = new Date();
-		together.setFullYear(2014, 6, 27);
+		together.setFullYear(2024, 3, 1);
 		together.setHours(0);
 		together.setMinutes(0);
 		together.setSeconds(0);
 		together.setMilliseconds(0);
-		
+
 		if (!document.createElement('canvas').getContext) {
 			var msg = document.createElement("div");
 			msg.id = "errorMsg";
-			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
 			document.body.appendChild(msg);
 			$("#code").css("display", "none")
 			$("#copyright").css("position", "absolute");
 			$("#copyright").css("bottom", "10px");
-		    document.execCommand("stop");
+			document.execCommand("stop");
 		} else {
 			setTimeout(function () {
 				startHeartAnimation();
@@ -99,4 +125,5 @@
 		}
 	</script>
 </body>
+
 </html>

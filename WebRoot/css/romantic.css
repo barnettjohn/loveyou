@@ -1,0 +1,32 @@
+.falling-hearts {
+    position: fixed;
+    top: -20px;
+    animation: fall 3s linear infinite;
+    color: #ff69b4;
+    font-size: 20px;
+    z-index: 1000;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-20px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+.glow-text {
+    text-shadow: 0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 15px #ff69b4,
+        0 0 20px #ff69b4;
+}
+
+#loveu {
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
