@@ -1,3 +1,6 @@
+/* 导入Google字体 - 只用于花环文字 */
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap');
+
 .falling-hearts {
     position: fixed;
     top: -20px;
@@ -17,7 +20,14 @@
     }
 }
 
-.glow-text {
+/* 只修改花环部分的文字样式 */
+#words {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 24px;
+}
+
+#messages {
+    font-size: 20px;
     text-shadow: 0 0 5px #fff,
         0 0 10px #fff,
         0 0 15px #ff69b4,
@@ -25,8 +35,34 @@
 }
 
 #loveu {
+    font-size: 22px;
     background: linear-gradient(45deg, #ff69b4, #ff1493);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: bold;
+    font-weight: normal;
+    line-height: 1.8;
+}
+
+.signature {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 20px;
+    margin-top: 15px;
+    color: #ff69b4;
+    text-shadow: 0 0 3px #fff;
+}
+
+/* 优化动画效果 */
+.glow-text {
+    text-shadow: 0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 15px #ff69b4,
+        0 0 20px #ff69b4;
+    transition: text-shadow 0.3s ease;
+}
+
+.glow-text:hover {
+    text-shadow: 0 0 10px #fff,
+        0 0 20px #fff,
+        0 0 30px #ff69b4,
+        0 0 40px #ff69b4;
 }
