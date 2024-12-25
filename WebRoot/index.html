@@ -36,12 +36,20 @@
 	</style>
 	<link href="css/default.css" type="text/css" rel="stylesheet">
 	<link href="css/romantic.css" type="text/css" rel="stylesheet">
+	<link href="css/album.css" type="text/css" rel="stylesheet">
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/garden.js"></script>
 	<script type="text/javascript" src="js/functions.js"></script>
 </head>
 
 <body>
+	<div class="photo-album">
+		<div class="photo-slide active" style="background-image: url('image/photo1.jpg')"></div>
+	</div>
+
+	<button class="album-nav prev-btn">❮</button>
+	<button class="album-nav next-btn">❯</button>
+
 	<div id="mainDiv">
 		<div id="content">
 			<div id="code">
@@ -59,7 +67,7 @@
 				i.miss(u);<br />
 				<span class="comments">// 都让我更加确定，你就是我要携手一生的人</span><br />
 				i.takeCareOf(u);<br />
-				<span class="comments">// 此时此刻，我要向你许下最真挚的承诺</span><br />
+				<span class="comments">// 此时此刻，要向许下最真挚的承诺</span><br />
 				<span class="comments">// 亲爱的，你愿意成为我一生的挚爱吗？</span><br />
 				<span class="keyword">boolean</span> answer = u.willYouMarryMe();<br />
 				<span class="keyword">if</span> (answer) {<br />
@@ -82,7 +90,7 @@
 					<div id="loveu">
 						愿你成为我的唯一 ❤️<br />
 						让我们携手走过人生每一个春夏秋冬<br />
-						<div class="signature">—— 庆伟 用心爱你</div>
+						<div class="signature">—— 庆伟</div>
 					</div>
 				</div>
 			</div>
@@ -124,6 +132,34 @@
 			adjustCodePosition();
 			$("#code").typewriter();
 		}
+
+		$(document).ready(function () {
+			let currentSlide = 0;
+			const slides = $('.photo-slide');
+			const totalSlides = slides.length;
+
+			function showSlide(index) {
+				slides.removeClass('active');
+				$(slides[index]).addClass('active');
+			}
+
+			function nextSlide() {
+				currentSlide = (currentSlide + 1) % totalSlides;
+				showSlide(currentSlide);
+			}
+
+			function prevSlide() {
+				currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+				showSlide(currentSlide);
+			}
+
+			// 自动播放
+			setInterval(nextSlide, 5000);
+
+			// 绑定按钮事件
+			$('.next-btn').click(nextSlide);
+			$('.prev-btn').click(prevSlide);
+		});
 	</script>
 </body>
 
